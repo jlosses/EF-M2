@@ -13,27 +13,31 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#inicio">
-                <i class="fas fa-code me-2"></i>Code & Coffee
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                </ul>
+    <!-- ==================== HEADER CON NAVBAR ==================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    <i class="fas fa-code me-2"></i>Code & Coffee
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main>
 
     <!-- ==================== HERO SECTION ==================== -->
     <section id="inicio" class="hero">
@@ -373,6 +377,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
@@ -413,7 +419,7 @@
         </div>
     </footer>
 
-    <!-- ==================== MODAL DE RESERVA ==================== -->
+    <!-- ==================== MODAL DE INTERÉS EN PRODUCTO ==================== -->
     <div class="modal fade" id="reservaModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -428,6 +434,26 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <a href="#contacto" class="btn btn-warning" data-bs-dismiss="modal">Ir a Reservar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL DE ÉXITO ==================== -->
+    <div class="modal fade" id="exitoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-check-circle me-2"></i>¡Reserva Confirmada!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Gracias, <strong id="nombreExito"></strong>!</p>
+                    <p>Tu reserva ha sido recibida correctamente. Nos comunicaremos pronto para confirmar los detalles.</p>
+                    <p class="text-muted mb-0">Puedes revisar tu correo para más información.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
