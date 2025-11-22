@@ -43,6 +43,8 @@ function mostrarModalExito() {
 
 // Manejo del modal al hacer clic en corazón
 const reservaModal = document.getElementById('reservaModal');
+let productoSeleccionado = ''; // Variable para guardar el producto
+
 if (reservaModal) {
     reservaModal.addEventListener('show.bs.modal', function(event) {
         const boton = event.relatedTarget;
@@ -52,5 +54,28 @@ if (reservaModal) {
         if (dishNameElement) {
             dishNameElement.textContent = nombrePlatillo;
         }
+        
+        // Guardar el nombre del producto para usarlo después
+        productoSeleccionado = nombrePlatillo;
     });
+    
+    // Manejo del botón "Ir a Reservar"
+    const irAReservarBtn = reservaModal.querySelector('.modal-footer .btn-warning');
+    if (irAReservarBtn) {
+        irAReservarBtn.addEventListener('click', function() {
+            // Agregar el nombre del producto al campo de mensaje
+            const mensajeField = document.getElementById('mensaje');
+            if (mensajeField && productoSeleccionado) {
+                const textoActual = mensajeField.value;
+                const textoProducto = `Interesado en: ${productoSeleccionado}`;
+                
+                // Si ya hay texto, agregar el producto al final
+                if (textoActual) {
+                    mensajeField.value = textoActual + '\n' + textoProducto;
+                } else {
+                    mensajeField.value = textoProducto;
+                }
+            }
+        });
+    }
 }
