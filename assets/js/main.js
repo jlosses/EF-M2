@@ -1,15 +1,26 @@
-// Validación básica del formulario de reserva
+// Validación del formulario de reserva con mensaje de éxito
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     
     if (form) {
         form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             // Validar que el formulario sea válido
             if (!form.checkValidity()) {
-                e.preventDefault();
                 e.stopPropagation();
+                form.classList.add('was-validated');
+                return false;
             }
+            
             form.classList.add('was-validated');
+            
+            // Si es válido, mostrar modal de éxito
+            mostrarModalExito();
+            
+            // Limpiar formulario
+            form.reset();
+            form.classList.remove('was-validated');
         });
     }
 
@@ -20,6 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
         inputFecha.setAttribute('min', hoy);
     }
 });
+
+// Función para mostrar modal de éxito
+function mostrarModalExito() {
+    const nombre = document.getElementById('nombre').value;
+    const modalExito = new bootstrap.Modal(document.getElementById('exitoModal'));
+    const nombreExito = document.getElementById('nombreExito');
+    nombreExito.textContent = nombre;
+    modalExito.show();
+}
 
 // Manejo del modal al hacer clic en corazón
 const reservaModal = document.getElementById('reservaModal');
