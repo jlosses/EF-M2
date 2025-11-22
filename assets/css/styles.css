@@ -1,0 +1,45 @@
+/* Estilos mínimos para complementar Bootstrap */
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background: #2C3E50;
+    color: white;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    color: #FFC107;
+    font-weight: bold;
+}
+
+.hero .subtitle {
+    color: #ECF0F1;
+    font-weight: 300;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #2C3E50;
+    border-bottom: 3px solid #FFC107;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.menu-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.contact-card {
+    border-top: 4px solid #FFC107;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+footer {
+    border-top: 3px solid #FFC107;
+}
